@@ -28,6 +28,12 @@ class CharactersViewModel: AsyncFetchingViewModel {
     }
     
     private(set) var totalFetchableItemCount: Int = 0
+    
+    private func reloadNeedingIndexPaths(with newItemCount: Int) -> [IndexPath] {
+        let startIndex = items.count - newItemCount
+        let endIndex = startIndex + newItemCount
+        return (startIndex..<endIndex).map { IndexPath(row: $0, section: 0) }
+    }
 
     func fetchItems() {
         guard !isCurrentlyFetching else { return }
@@ -47,7 +53,7 @@ class CharactersViewModel: AsyncFetchingViewModel {
                 strSelf.currentPage += 1
                 strSelf.totalFetchableItemCount = response.data.total
                 strSelf.items.append(contentsOf: response.data.results)
-                let fetchType: FetchType = strSelf.currentPage == 2 ? .firstFetch : .nonFirstFetch(indexPathsToReload: strSelf.lastPageIndexPaths)
+                let fetchType: FetchType = strSelf.currentPage == 2 ? .firstFetch : .nonFirstFetch(indexPathsToReload: strSelf.reloadNeedingIndexPaths(with: response.data.results.count))
                 strSelf.delegate?.fetchedItems(type: fetchType)
             }
         }
