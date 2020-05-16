@@ -12,10 +12,11 @@
 		847472C5246F964F0090E7B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847472C3246F964F0090E7B9 /* Main.storyboard */; };
 		847472C7246F96500090E7B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 847472C6246F96500090E7B9 /* Assets.xcassets */; };
 		847472CA246F96500090E7B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847472C8246F96500090E7B9 /* LaunchScreen.storyboard */; };
-		847472D2246F98BF0090E7B9 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847472D1246F98BF0090E7B9 /* Character.swift */; };
 		847472D6246F9ACB0090E7B9 /* CharacterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847472D5246F9ACB0090E7B9 /* CharacterCollectionViewCell.swift */; };
 		847472DA246F9F270090E7B9 /* CharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847472D9246F9F270090E7B9 /* CharactersViewController.swift */; };
 		847472DC246FA44F0090E7B9 /* CharactersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847472DB246FA44F0090E7B9 /* CharactersViewModel.swift */; };
+		847472E0246FA9F80090E7B9 /* MarvelClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847472DF246FA9F80090E7B9 /* MarvelClient.swift */; };
+		847472E2246FB2370090E7B9 /* GetCharactersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847472E1246FB2370090E7B9 /* GetCharactersResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,10 +27,11 @@
 		847472C6246F96500090E7B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		847472C9246F96500090E7B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		847472CB246F96500090E7B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		847472D1246F98BF0090E7B9 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		847472D5246F9ACB0090E7B9 /* CharacterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCollectionViewCell.swift; sourceTree = "<group>"; };
 		847472D9246F9F270090E7B9 /* CharactersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewController.swift; sourceTree = "<group>"; };
 		847472DB246FA44F0090E7B9 /* CharactersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewModel.swift; sourceTree = "<group>"; };
+		847472DF246FA9F80090E7B9 /* MarvelClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelClient.swift; sourceTree = "<group>"; };
+		847472E1246FB2370090E7B9 /* GetCharactersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCharactersResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,9 +66,9 @@
 			children = (
 				847472BD246F964F0090E7B9 /* AppDelegate.swift */,
 				847472BF246F964F0090E7B9 /* SceneDelegate.swift */,
-				847472D1246F98BF0090E7B9 /* Character.swift */,
 				847472D9246F9F270090E7B9 /* CharactersViewController.swift */,
 				847472D5246F9ACB0090E7B9 /* CharacterCollectionViewCell.swift */,
+				847472DE246FA7500090E7B9 /* Networking */,
 				847472DB246FA44F0090E7B9 /* CharactersViewModel.swift */,
 				847472C3246F964F0090E7B9 /* Main.storyboard */,
 				847472C6246F96500090E7B9 /* Assets.xcassets */,
@@ -74,6 +76,15 @@
 				847472CB246F96500090E7B9 /* Info.plist */,
 			);
 			path = marvel;
+			sourceTree = "<group>";
+		};
+		847472DE246FA7500090E7B9 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				847472DF246FA9F80090E7B9 /* MarvelClient.swift */,
+				847472E1246FB2370090E7B9 /* GetCharactersResponse.swift */,
+			);
+			name = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,7 +163,8 @@
 				847472BE246F964F0090E7B9 /* AppDelegate.swift in Sources */,
 				847472C0246F964F0090E7B9 /* SceneDelegate.swift in Sources */,
 				847472DA246F9F270090E7B9 /* CharactersViewController.swift in Sources */,
-				847472D2246F98BF0090E7B9 /* Character.swift in Sources */,
+				847472E2246FB2370090E7B9 /* GetCharactersResponse.swift in Sources */,
+				847472E0246FA9F80090E7B9 /* MarvelClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
