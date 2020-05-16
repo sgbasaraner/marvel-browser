@@ -6,7 +6,7 @@
 //  Copyright © 2020 Sarp. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol AsyncFetchingViewModel {
     associatedtype Item
@@ -27,6 +27,12 @@ extension AsyncFetchingViewModel {
     
     func item(at index: Int) -> Item? {
         items.nth(index)
+    }
+    
+    var lastPageIndexPaths: [IndexPath] {
+        let startIndex = items.count - pageSize
+        let endIndex = items.count
+        return (startIndex..<endIndex).map { IndexPath(row: $0, section: 0) }
     }
 }
 

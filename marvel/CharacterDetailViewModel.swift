@@ -20,12 +20,6 @@ class CharacterDetailViewModel: AsyncFetchingViewModel {
     
     private var isCurrentlyFetching = false
     
-    private var lastPageIndexPaths: [IndexPath] {
-        let startIndex = items.count - pageSize
-        let endIndex = items.count
-        return (startIndex..<endIndex).map { IndexPath(row: $0, section: 0) }
-    }
-    
     private(set) var items: [Comic] = []
     
     private let character: MarvelCharacter
