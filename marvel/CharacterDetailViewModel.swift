@@ -11,7 +11,6 @@ import Foundation
 class CharacterDetailViewModel: AsyncFetchingViewModel {
     typealias Item = Comic
     
-    // Private API
     private weak var delegate: PrefetchingViewModelDelegate?
     
     private var currentPage = 1
