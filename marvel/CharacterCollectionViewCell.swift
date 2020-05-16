@@ -11,13 +11,11 @@ import UIKit
 class CharacterCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet private weak var nameLabel: UILabel!
-    @IBOutlet private weak var imageView: UIImageView!
     
     static let reuseId = "characterCell"
     
     func configure(name: String, imageUrl: String) {
         nameLabel?.text = name
-        imageView?.image = UIImage(named: imageUrl)
     }
     
     func configureLoading() {

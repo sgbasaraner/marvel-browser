@@ -41,19 +41,6 @@ extension CharactersViewController: CharactersViewModelDelegate {
         }
     }
     
-    func fetchFailed(reason: String) {
-        // TODO: log errors
-        print(reason)
-    }
-}
-
-extension CharactersViewController: UICollectionViewDataSourcePrefetching {
-    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
-        viewModel.fetchCharacters()
-    }
-}
-
-extension CharactersViewController: UICollectionViewDelegateFlowLayout {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         viewModel.totalFetchableCharacterCount
     }
@@ -70,9 +57,15 @@ extension CharactersViewController: UICollectionViewDelegateFlowLayout {
         }
         return cell
     }
+    
+    func fetchFailed(reason: String) {
+        // TODO: log errors
+        print(reason)
+    }
+}
 
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let itemSize = (collectionView.frame.width - (collectionView.contentInset.left + collectionView.contentInset.right + 10)) / 2
-        return CGSize(width: itemSize, height: itemSize)
+extension CharactersViewController: UICollectionViewDataSourcePrefetching {
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        viewModel.fetchCharacters()
     }
 }
