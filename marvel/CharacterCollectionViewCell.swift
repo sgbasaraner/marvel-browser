@@ -24,14 +24,26 @@ class CharacterCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // TODO: impl
+        nameLabel.textColor = .white
+        nameLabel.layer.shadowOpacity = 1
+        nameLabel.layer.shadowRadius = 1
+        nameLabel.layer.shadowColor = UIColor.black.cgColor
+        nameLabel.layer.shadowOffset = CGSize(width: 0.0, height: -0.5)
+        nameLabel.numberOfLines = 1
+        nameLabel.translatesAutoresizingMaskIntoConstraints = false
+        nameLabel.font = UIFont(name: "Marvel-Regular", size: 20)
+        contentView.bringSubviewToFront(nameLabel)
+    }
+    
+    private func cleanName(_ name: String) -> String {
+        return name.replacingOccurrences(of: "\\s?\\([\\w\\s]*\\)", with: "", options: .regularExpression)
     }
     
     func configure(with character: Character?) {
         if let char = character {
             activityIndicator?.stopAnimating()
             nameLabel?.alpha = 1
-            nameLabel?.text = char.name
+            nameLabel?.text = cleanName(char.name.uppercased())
             if let url = URL(string: char.thumbnail.path + "." + char.thumbnail.thumbnailExtension) {
                 imageView?.kf.setImage(with: url)
             }

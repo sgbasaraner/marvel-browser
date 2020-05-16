@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		840D26CA246FEC750000361E /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 840D26C9246FEC750000361E /* Kingfisher */; };
+		840D26CC246FF1BE0000361E /* MarvelRegular-Dj83.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 840D26CB246FF0FC0000361E /* MarvelRegular-Dj83.ttf */; };
 		847472BE246F964F0090E7B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847472BD246F964F0090E7B9 /* AppDelegate.swift */; };
 		847472C0246F964F0090E7B9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847472BF246F964F0090E7B9 /* SceneDelegate.swift */; };
 		847472C5246F964F0090E7B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847472C3246F964F0090E7B9 /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		840D26CB246FF0FC0000361E /* MarvelRegular-Dj83.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MarvelRegular-Dj83.ttf"; sourceTree = "<group>"; };
 		847472BA246F964F0090E7B9 /* marvel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = marvel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		847472BD246F964F0090E7B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		847472BF246F964F0090E7B9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				847472BF246F964F0090E7B9 /* SceneDelegate.swift */,
 				847472D9246F9F270090E7B9 /* CharactersViewController.swift */,
 				847472D5246F9ACB0090E7B9 /* CharacterCollectionViewCell.swift */,
+				840D26CB246FF0FC0000361E /* MarvelRegular-Dj83.ttf */,
 				847472E5246FD04D0090E7B9 /* Collection.swift */,
 				847472DE246FA7500090E7B9 /* Networking */,
 				847472DB246FA44F0090E7B9 /* CharactersViewModel.swift */,
@@ -157,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				847472CA246F96500090E7B9 /* LaunchScreen.storyboard in Resources */,
+				840D26CC246FF1BE0000361E /* MarvelRegular-Dj83.ttf in Resources */,
 				847472C7246F96500090E7B9 /* Assets.xcassets in Resources */,
 				847472C5246F964F0090E7B9 /* Main.storyboard in Resources */,
 			);
