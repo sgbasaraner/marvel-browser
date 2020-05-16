@@ -31,7 +31,7 @@ class CharacterCollectionViewCell: UICollectionViewCell {
         nameLabel.layer.shadowOffset = CGSize(width: 0.0, height: -0.5)
         nameLabel.numberOfLines = 1
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
-        nameLabel.font = UIFont(name: "Marvel-Regular", size: 20)
+        nameLabel.font = UIFont(name: "Marvel-Regular", size: 23)
         contentView.bringSubviewToFront(nameLabel)
     }
     
