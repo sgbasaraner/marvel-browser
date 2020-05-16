@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CharacterCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet private weak var imageView: UIImageView!
     
     static let reuseId = "characterCell"
     
@@ -30,6 +32,9 @@ class CharacterCollectionViewCell: UICollectionViewCell {
             activityIndicator?.stopAnimating()
             nameLabel?.alpha = 1
             nameLabel?.text = char.name
+            if let url = URL(string: char.thumbnail.path + "." + char.thumbnail.thumbnailExtension) {
+                imageView?.kf.setImage(with: url)
+            }
         } else {
             nameLabel?.alpha = 0
             activityIndicator?.startAnimating()

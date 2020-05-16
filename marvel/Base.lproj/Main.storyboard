@@ -37,16 +37,24 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EFp-gD-Lnn">
+                                            <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
+                                        </imageView>
                                     </subviews>
                                 </view>
                                 <constraints>
                                     <constraint firstAttribute="trailingMargin" secondItem="kqz-Br-Ohk" secondAttribute="trailing" constant="12" id="Cpx-k2-71y"/>
+                                    <constraint firstItem="EFp-gD-Lnn" firstAttribute="top" secondItem="LJ9-CQ-jyP" secondAttribute="top" id="JaZ-Vc-Ahj"/>
                                     <constraint firstItem="uOs-yf-EI5" firstAttribute="centerX" secondItem="LJ9-CQ-jyP" secondAttribute="centerX" id="Ml6-Q4-YEr"/>
+                                    <constraint firstItem="EFp-gD-Lnn" firstAttribute="leading" secondItem="LJ9-CQ-jyP" secondAttribute="leading" id="XXj-3w-ULe"/>
                                     <constraint firstItem="uOs-yf-EI5" firstAttribute="centerY" secondItem="LJ9-CQ-jyP" secondAttribute="centerY" id="ceB-L0-Tem"/>
                                     <constraint firstItem="kqz-Br-Ohk" firstAttribute="top" secondItem="LJ9-CQ-jyP" secondAttribute="topMargin" constant="12" id="iex-Qi-qlC"/>
+                                    <constraint firstAttribute="bottom" secondItem="EFp-gD-Lnn" secondAttribute="bottom" id="rNN-Wy-MR9"/>
+                                    <constraint firstAttribute="trailing" secondItem="EFp-gD-Lnn" secondAttribute="trailing" id="yLv-IZ-smO"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="activityIndicator" destination="uOs-yf-EI5" id="Sbs-aS-aBW"/>
+                                    <outlet property="imageView" destination="EFp-gD-Lnn" id="EgG-I6-WWZ"/>
                                     <outlet property="nameLabel" destination="kqz-Br-Ohk" id="I40-ww-P3Y"/>
                                 </connections>
                             </collectionViewCell>
