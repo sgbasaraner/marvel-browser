@@ -8,7 +8,7 @@
 
 import Foundation
 
-class CharactersViewModel: PrefetchingViewModel {
+class CharactersViewModel: AsyncFetchingViewModel {
     typealias Item = MarvelCharacter
     
     // Private API

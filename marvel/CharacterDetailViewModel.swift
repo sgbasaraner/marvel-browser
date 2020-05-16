@@ -8,7 +8,7 @@
 
 import Foundation
 
-class CharacterDetailViewModel: PrefetchingViewModel {
+class CharacterDetailViewModel: AsyncFetchingViewModel {
     typealias Item = Comic
     
     // Private API
@@ -48,8 +48,8 @@ class CharacterDetailViewModel: PrefetchingViewModel {
         guard !isCurrentlyFetching else { return }
         isCurrentlyFetching = true
         
-        let limit = currentPage * pageSize
-        let offset = (currentPage - 1) * pageSize
+        let limit = pageSize
+        let offset = 0
         let completion: (Result<GetResultsResponse<Comic>, Error>) -> Void = { [weak self] result in
             guard let strSelf = self else { return }
             strSelf.isCurrentlyFetching = false
@@ -60,7 +60,7 @@ class CharacterDetailViewModel: PrefetchingViewModel {
                 strSelf.delegate?.fetchFailed(reason: err.localizedDescription)
             case .success(let response):
                 strSelf.currentPage += 1
-                strSelf.totalFetchableItemCount = response.data.total
+                strSelf.totalFetchableItemCount = min(response.data.total, strSelf.pageSize)
                 strSelf.items.append(contentsOf: response.data.results)
                 let fetchType: FetchType = strSelf.currentPage == 2 ? .firstFetch : .nonFirstFetch(indexPathsToReload: strSelf.lastPageIndexPaths)
                 strSelf.delegate?.fetchedItems(type: fetchType)

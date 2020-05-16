@@ -24,12 +24,11 @@ class CharacterDetailViewController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.prefetchDataSource = self
         nameLabel?.text = character.name
         if let url = URL(string: character.thumbnail.urlString) {
             imageView?.kf.setImage(with: url)
         }
-        viewModel = CharacterDetailViewModel(delegate: self, pageSize: 20, character: character)
+        viewModel = CharacterDetailViewModel(delegate: self, pageSize: 10, character: character)
         viewModel.fetchItems()
     }
 }
@@ -53,14 +52,6 @@ extension CharacterDetailViewController: PrefetchingViewModelDelegate {
     }
 }
 
-extension CharacterDetailViewController: UITableViewDataSourcePrefetching {
-    
-    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
-        guard indexPaths.contains(where: { viewModel.item(at: $0.row) == nil }) else { return }
-        viewModel.fetchItems()
-    }
-}
-
 extension CharacterDetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.totalFetchableItemCount
@@ -73,6 +64,6 @@ extension CharacterDetailViewController: UITableViewDelegate, UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 54
+        return 100
     }
 }

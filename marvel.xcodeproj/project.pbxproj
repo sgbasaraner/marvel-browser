@@ -10,7 +10,7 @@
 		840D26CA246FEC750000361E /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 840D26C9246FEC750000361E /* Kingfisher */; };
 		840D26CC246FF1BE0000361E /* MarvelRegular-Dj83.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 840D26CB246FF0FC0000361E /* MarvelRegular-Dj83.ttf */; };
 		840D26CE246FF6480000361E /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840D26CD246FF6480000361E /* CharacterDetailViewController.swift */; };
-		840D26D3246FFAD70000361E /* PrefetchingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840D26D2246FFAD70000361E /* PrefetchingViewModel.swift */; };
+		840D26D3246FFAD70000361E /* AsyncFetchingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840D26D2246FFAD70000361E /* AsyncFetchingViewModel.swift */; };
 		840D26D5247007200000361E /* CharacterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840D26D4247007200000361E /* CharacterDetailViewModel.swift */; };
 		840D26D7247007E00000361E /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840D26D6247007E00000361E /* DateFormatter.swift */; };
 		840D26DB24700E190000361E /* ComicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840D26DA24700E190000361E /* ComicTableViewCell.swift */; };
@@ -30,7 +30,7 @@
 /* Begin PBXFileReference section */
 		840D26CB246FF0FC0000361E /* MarvelRegular-Dj83.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MarvelRegular-Dj83.ttf"; sourceTree = "<group>"; };
 		840D26CD246FF6480000361E /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
-		840D26D2246FFAD70000361E /* PrefetchingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefetchingViewModel.swift; sourceTree = "<group>"; };
+		840D26D2246FFAD70000361E /* AsyncFetchingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncFetchingViewModel.swift; sourceTree = "<group>"; };
 		840D26D4247007200000361E /* CharacterDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewModel.swift; sourceTree = "<group>"; };
 		840D26D6247007E00000361E /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		840D26DA24700E190000361E /* ComicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicTableViewCell.swift; sourceTree = "<group>"; };
@@ -84,7 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				847472DB246FA44F0090E7B9 /* CharactersViewModel.swift */,
-				840D26D2246FFAD70000361E /* PrefetchingViewModel.swift */,
+				840D26D2246FFAD70000361E /* AsyncFetchingViewModel.swift */,
 				840D26D4247007200000361E /* CharacterDetailViewModel.swift */,
 			);
 			name = ViewModel;
@@ -218,7 +218,7 @@
 				847472BE246F964F0090E7B9 /* AppDelegate.swift in Sources */,
 				847472C0246F964F0090E7B9 /* SceneDelegate.swift in Sources */,
 				840D26DB24700E190000361E /* ComicTableViewCell.swift in Sources */,
-				840D26D3246FFAD70000361E /* PrefetchingViewModel.swift in Sources */,
+				840D26D3246FFAD70000361E /* AsyncFetchingViewModel.swift in Sources */,
 				847472DA246F9F270090E7B9 /* CharactersViewController.swift in Sources */,
 				840D26D5247007200000361E /* CharacterDetailViewModel.swift in Sources */,
 				847472E2246FB2370090E7B9 /* GetResultsResponse.swift in Sources */,

@@ -28,7 +28,6 @@ class ComicTableViewCell: UITableViewCell {
         nameLabel.layer.shadowRadius = 1
         nameLabel.layer.shadowColor = UIColor.black.cgColor
         nameLabel.layer.shadowOffset = CGSize(width: 0.0, height: -0.5)
-        nameLabel.numberOfLines = 1
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
     }
     

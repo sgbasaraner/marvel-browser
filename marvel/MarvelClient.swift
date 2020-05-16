@@ -57,8 +57,20 @@ class MarvelClient {
     }
     
     func requestComics(for character: MarvelCharacter, newerThan date: Date, limit: Int, offset: Int, completion: @escaping (Result<GetResultsResponse<Comic>, Error>) -> Void) {
-        // TODO: use date limit
-        let urlResult = Result.init { generateUrl(params: generateParams(limit: limit, offset: offset), urlString: baseUrl + "characters/\(character.id)/comics")! }
+        let formatter = DateFormatter.posix
+        formatter.dateFormat = "yyyy/MM/dd"
+        let oldDateString = formatter.string(from: date)
+        let todayString = formatter.string(from: Date())
+        
+        let additionalParams = [
+            "dateRange" : "\(oldDateString),\(todayString)",
+            "orderBy" : "-onsaleDate"
+        ]
+        
+        let urlResult = Result.init {
+            generateUrl(params: generateParams(limit: limit, offset: offset, extraParams: additionalParams),
+                        urlString: baseUrl + "characters/\(character.id)/comics")!
+        }
         switch urlResult {
         case .success(let url):
             marvelRequest(url: url, completion: completion)

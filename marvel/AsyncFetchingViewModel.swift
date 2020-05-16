@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol PrefetchingViewModel {
+protocol AsyncFetchingViewModel {
     associatedtype Item
     
     var currentItemCount: Int { get }
@@ -20,7 +20,7 @@ protocol PrefetchingViewModel {
     func fetchItems()
 }
 
-extension PrefetchingViewModel {
+extension AsyncFetchingViewModel {
     var currentItemCount: Int {
         items.count
     }
