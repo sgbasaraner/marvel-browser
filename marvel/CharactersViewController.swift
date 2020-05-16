@@ -59,6 +59,18 @@ extension CharactersViewController: CharactersViewModelDelegate {
     }
 }
 
+extension CharactersViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        guard let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else { return CGSize.zero }
+        layout.sectionInset = UIEdgeInsets(top: 3, left: 3, bottom: 3, right: 3)
+        layout.minimumInteritemSpacing = 03
+        layout.minimumLineSpacing = 03
+        layout.invalidateLayout()
+        let edgeLength = (self.view.frame.width / 2) - 6
+        return CGSize(width: edgeLength, height: edgeLength)
+    }
+}
+
 extension CharactersViewController: UICollectionViewDataSourcePrefetching {
     func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
         guard indexPaths.contains(where: { viewModel.character(at: $0.row) == nil }) else { return }

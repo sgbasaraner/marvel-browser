@@ -45,10 +45,12 @@ class CharacterCollectionViewCell: UICollectionViewCell {
             nameLabel?.alpha = 1
             nameLabel?.text = cleanName(char.name.uppercased())
             if let url = URL(string: char.thumbnail.path + "." + char.thumbnail.thumbnailExtension) {
+                imageView?.alpha = 1
                 imageView?.kf.setImage(with: url)
             }
         } else {
             nameLabel?.alpha = 0
+            imageView?.alpha = 0
             activityIndicator?.startAnimating()
         }
     }
