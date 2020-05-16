@@ -17,7 +17,7 @@ class CharacterDetailViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
     
     var character: MarvelCharacter!
-    var viewModel: CharacterDetailViewModel!
+    private var viewModel: CharacterDetailViewModel!
     
     static let storyboardId = "detailVC"
     

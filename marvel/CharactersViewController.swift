@@ -10,10 +10,13 @@ import UIKit
 
 class CharactersViewController: UICollectionViewController {
     
-    var viewModel: CharactersViewModel!
+    private var viewModel: CharactersViewModel!
+    
+    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        activityIndicator?.startAnimating()
         viewModel = CharactersViewModel(delegate: self, pageSize: 30)
         viewModel.fetchItems()
         customizeBackButton()
@@ -55,6 +58,7 @@ extension CharactersViewController: PrefetchingViewModelDelegate {
             switch type {
             case .firstFetch:
                 self.collectionView.reloadData()
+                self.activityIndicator.stopAnimating()
             case .nonFirstFetch(indexPathsToReload: let indexPaths):
                 let visibleIndexPaths = self.collectionView.indexPathsForVisibleItems
                 let indexPathsToReload = Array(Set(visibleIndexPaths).intersection(indexPaths))
