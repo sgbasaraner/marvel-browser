@@ -39,7 +39,7 @@ class CharacterCollectionViewCell: UICollectionViewCell {
         return name.replacingOccurrences(of: "\\s?\\([\\w\\s]*\\)", with: "", options: .regularExpression)
     }
     
-    func configure(with character: Character?) {
+    func configure(with character: MarvelCharacter?) {
         if let char = character {
             activityIndicator?.stopAnimating()
             nameLabel?.alpha = 1

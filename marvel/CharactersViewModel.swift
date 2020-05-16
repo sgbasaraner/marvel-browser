@@ -9,7 +9,7 @@
 import Foundation
 
 class CharactersViewModel: PrefetchingViewModel {
-    typealias Item = Character
+    typealias Item = MarvelCharacter
     
     // Private API
     private weak var delegate: PrefetchingViewModelDelegate?
@@ -26,7 +26,7 @@ class CharactersViewModel: PrefetchingViewModel {
         return (startIndex..<endIndex).map { IndexPath(row: $0, section: 0) }
     }
     
-    private(set) var items: [Character] = []
+    private(set) var items: [MarvelCharacter] = []
 
     required init(delegate: PrefetchingViewModelDelegate, pageSize: Int) {
         self.delegate = delegate
@@ -41,7 +41,7 @@ class CharactersViewModel: PrefetchingViewModel {
         
         let limit = currentPage * pageSize
         let offset = (currentPage - 1) * pageSize
-        let completion: (Result<GetCharactersResponse, Error>) -> Void = { [weak self] result in
+        let completion: (Result<GetResultsResponse<MarvelCharacter>, Error>) -> Void = { [weak self] result in
             guard let strSelf = self else { return }
             strSelf.isCurrentlyFetching = false
             switch result {

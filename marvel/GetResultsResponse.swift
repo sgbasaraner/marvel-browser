@@ -8,11 +8,16 @@
 
 import Foundation
 
-struct GetCharactersResponse: Codable {
-    let data: CharacterDataContainer
+struct GetResultsResponse<T: Codable>: Codable {
+    let data: ResultDataContainer<T>
 }
 
-struct Character: Codable {
+struct Comic: Codable {
+    let title: String
+    let thumbnail: Thumbnail
+}
+
+struct MarvelCharacter: Codable {
     let id: Int
     let name, resultDescription: String
     let thumbnail: Thumbnail
@@ -26,8 +31,8 @@ struct Character: Codable {
     }
 }
 
-struct CharacterDataContainer: Codable {
-    let results: [Character]
+struct ResultDataContainer<T: Codable>: Codable {
+    let results: [T]
     let total: Int
 }
 
