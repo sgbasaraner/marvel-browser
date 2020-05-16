@@ -64,8 +64,7 @@ extension CharactersViewController: PrefetchingViewModelDelegate {
     }
     
     func fetchFailed(reason: String) {
-        // TODO: log errors
-        print(reason)
+        presentAlert(text: reason)
     }
 }
 

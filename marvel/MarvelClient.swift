@@ -47,7 +47,6 @@ class MarvelClient {
     
     func requestCharacters(limit: Int, offset: Int, completion: @escaping (Result<GetResultsResponse<MarvelCharacter>, Error>) -> Void) {
         let urlResult = Result.init { generateUrl(params: generateParams(limit: limit, offset: offset), urlString: baseUrl + "characters")! }
-        // TODO: add better error handling
         switch urlResult {
         case .success(let url):
             marvelRequest(url: url, completion: completion)

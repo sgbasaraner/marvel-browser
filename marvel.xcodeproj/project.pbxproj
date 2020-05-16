@@ -14,6 +14,7 @@
 		840D26D5247007200000361E /* CharacterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840D26D4247007200000361E /* CharacterDetailViewModel.swift */; };
 		840D26D7247007E00000361E /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840D26D6247007E00000361E /* DateFormatter.swift */; };
 		840D26DB24700E190000361E /* ComicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840D26DA24700E190000361E /* ComicTableViewCell.swift */; };
+		840D26E224701D440000361E /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840D26E124701D440000361E /* UIViewController.swift */; };
 		847472BE246F964F0090E7B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847472BD246F964F0090E7B9 /* AppDelegate.swift */; };
 		847472C0246F964F0090E7B9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847472BF246F964F0090E7B9 /* SceneDelegate.swift */; };
 		847472C5246F964F0090E7B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847472C3246F964F0090E7B9 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 		840D26D4247007200000361E /* CharacterDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewModel.swift; sourceTree = "<group>"; };
 		840D26D6247007E00000361E /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		840D26DA24700E190000361E /* ComicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicTableViewCell.swift; sourceTree = "<group>"; };
+		840D26E124701D440000361E /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		847472BA246F964F0090E7B9 /* marvel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = marvel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		847472BD246F964F0090E7B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		847472BF246F964F0090E7B9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +92,16 @@
 			name = ViewModel;
 			sourceTree = "<group>";
 		};
+		840D26DE24701CBE0000361E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				847472E5246FD04D0090E7B9 /* Collection.swift */,
+				840D26E124701D440000361E /* UIViewController.swift */,
+				840D26D6247007E00000361E /* DateFormatter.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		847472B1246F964F0090E7B9 = {
 			isa = PBXGroup;
 			children = (
@@ -111,11 +123,10 @@
 			children = (
 				847472BD246F964F0090E7B9 /* AppDelegate.swift */,
 				847472BF246F964F0090E7B9 /* SceneDelegate.swift */,
-				847472E5246FD04D0090E7B9 /* Collection.swift */,
-				840D26D6247007E00000361E /* DateFormatter.swift */,
 				840D26D1246FF6860000361E /* ViewModel */,
 				840D26D0246FF6810000361E /* View */,
 				840D26CF246FF6750000361E /* ViewController */,
+				840D26DE24701CBE0000361E /* Extensions */,
 				847472DE246FA7500090E7B9 /* Networking */,
 				847472C3246F964F0090E7B9 /* Main.storyboard */,
 				847472C6246F96500090E7B9 /* Assets.xcassets */,
@@ -212,6 +223,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				840D26E224701D440000361E /* UIViewController.swift in Sources */,
 				840D26D7247007E00000361E /* DateFormatter.swift in Sources */,
 				847472DC246FA44F0090E7B9 /* CharactersViewModel.swift in Sources */,
 				847472D6246F9ACB0090E7B9 /* CharacterCollectionViewCell.swift in Sources */,
