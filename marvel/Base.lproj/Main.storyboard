@@ -77,10 +77,10 @@
             </objects>
             <point key="canvasLocation" x="135" y="134"/>
         </scene>
-        <!--View Controller-->
+        <!--Character Detail View Controller-->
         <scene sceneID="Czv-Ok-PtQ">
             <objects>
-                <viewController storyboardIdentifier="detailVC" id="8X6-kK-Xhk" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="detailVC" id="8X6-kK-Xhk" customClass="CharacterDetailViewController" customModule="marvel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BZl-dK-uzK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -135,6 +135,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="h5T-Tu-6BU"/>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="VXc-Vq-IoS" id="RpS-eS-8Mh"/>
+                        <outlet property="nameLabel" destination="JP2-7a-wSp" id="le3-db-U4v"/>
+                        <outlet property="tableView" destination="5w0-Zc-M1V" id="uW7-9S-eqK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wc4-xn-W0o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

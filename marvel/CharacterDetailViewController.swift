@@ -21,7 +21,7 @@ class CharacterDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel = CharacterDetailViewModel(delegate: self, pageSize: 30, character: character)
+        viewModel = CharacterDetailViewModel(delegate: self, pageSize: 20, character: character)
         viewModel.fetchItems()
     }
 }
@@ -59,6 +59,7 @@ extension CharacterDetailViewController: UITableViewDelegate, UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell() // TODO: initialize correct cell
+        let cell = UITableViewCell() // TODO: initialize correct cell
+        cell.textLabel?.text = viewModel.item(at: indexPath.row)?.title
     }
 }
