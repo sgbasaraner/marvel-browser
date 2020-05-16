@@ -27,6 +27,7 @@ struct Character: Codable {
 
 struct CharacterDataContainer: Codable {
     let results: [Character]
+    let total: Int
 }
 
 struct ComicList: Codable {

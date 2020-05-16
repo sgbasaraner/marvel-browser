@@ -17,6 +17,7 @@
 		847472DC246FA44F0090E7B9 /* CharactersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847472DB246FA44F0090E7B9 /* CharactersViewModel.swift */; };
 		847472E0246FA9F80090E7B9 /* MarvelClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847472DF246FA9F80090E7B9 /* MarvelClient.swift */; };
 		847472E2246FB2370090E7B9 /* GetCharactersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847472E1246FB2370090E7B9 /* GetCharactersResponse.swift */; };
+		847472E6246FD04D0090E7B9 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847472E5246FD04D0090E7B9 /* Collection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		847472DB246FA44F0090E7B9 /* CharactersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewModel.swift; sourceTree = "<group>"; };
 		847472DF246FA9F80090E7B9 /* MarvelClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelClient.swift; sourceTree = "<group>"; };
 		847472E1246FB2370090E7B9 /* GetCharactersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCharactersResponse.swift; sourceTree = "<group>"; };
+		847472E5246FD04D0090E7B9 /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				847472BF246F964F0090E7B9 /* SceneDelegate.swift */,
 				847472D9246F9F270090E7B9 /* CharactersViewController.swift */,
 				847472D5246F9ACB0090E7B9 /* CharacterCollectionViewCell.swift */,
+				847472E5246FD04D0090E7B9 /* Collection.swift */,
 				847472DE246FA7500090E7B9 /* Networking */,
 				847472DB246FA44F0090E7B9 /* CharactersViewModel.swift */,
 				847472C3246F964F0090E7B9 /* Main.storyboard */,
@@ -165,6 +168,7 @@
 				847472DA246F9F270090E7B9 /* CharactersViewController.swift in Sources */,
 				847472E2246FB2370090E7B9 /* GetCharactersResponse.swift in Sources */,
 				847472E0246FA9F80090E7B9 /* MarvelClient.swift in Sources */,
+				847472E6246FD04D0090E7B9 /* Collection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

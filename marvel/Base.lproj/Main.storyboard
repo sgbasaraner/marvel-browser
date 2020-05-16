@@ -58,6 +58,7 @@
                         <connections>
                             <outlet property="dataSource" destination="NZ3-FZ-uif" id="1Ps-ps-Lqq"/>
                             <outlet property="delegate" destination="NZ3-FZ-uif" id="nKw-7I-HaM"/>
+                            <outlet property="prefetchDataSource" destination="NZ3-FZ-uif" id="W2c-En-rCK"/>
                         </connections>
                     </collectionView>
                 </collectionViewController>

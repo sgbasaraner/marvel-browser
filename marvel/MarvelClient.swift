@@ -18,7 +18,7 @@ class MarvelClient {
     
     static let shared = MarvelClient()
     
-    func requestCharacters(limit: Int, offset: Int, completion: @escaping (Result<[Character], Error>) -> Void) {
+    func requestCharacters(limit: Int, offset: Int, completion: @escaping (Result<GetCharactersResponse, Error>) -> Void) {
         let ts = String(Date().timeIntervalSince1970)
         let hashComponents = ts + privateKey + apiKey
         let digest = Insecure.MD5.hash(data: hashComponents.data(using: .utf8) ?? Data())
@@ -36,9 +36,7 @@ class MarvelClient {
                 case .success(let data):
                     return completion(Result
                         .init { try JSONDecoder()
-                            .decode(GetCharactersResponse.self,
-                                    from: data) }
-                        .flatMap { .success($0.data.results) })
+                            .decode(GetCharactersResponse.self, from: data) })
                 case .failure(let err):
                     return completion(.failure(err))
                 }

@@ -19,4 +19,8 @@ class CharacterCollectionViewCell: UICollectionViewCell {
         nameLabel?.text = name
         imageView?.image = UIImage(named: imageUrl)
     }
+    
+    func configureLoading() {
+        nameLabel?.text = "LOADING"
+    }
 }
