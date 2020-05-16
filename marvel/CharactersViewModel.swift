@@ -53,6 +53,8 @@ class CharactersViewModel {
             strSelf.isCurrentlyFetching = false
             switch result {
             case .failure(let err):
+                print(limit)
+                print(offset)
                 strSelf.delegate?.fetchFailed(reason: err.localizedDescription)
             case .success(let response):
                 strSelf.currentPage += 1

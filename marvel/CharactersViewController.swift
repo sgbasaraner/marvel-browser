@@ -66,6 +66,7 @@ extension CharactersViewController: CharactersViewModelDelegate {
 
 extension CharactersViewController: UICollectionViewDataSourcePrefetching {
     func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        guard indexPaths.contains(where: { viewModel.character(at: $0.row) == nil }) else { return }
         viewModel.fetchCharacters()
     }
 }
