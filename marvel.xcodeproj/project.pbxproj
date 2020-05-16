@@ -11,6 +11,8 @@
 		840D26CC246FF1BE0000361E /* MarvelRegular-Dj83.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 840D26CB246FF0FC0000361E /* MarvelRegular-Dj83.ttf */; };
 		840D26CE246FF6480000361E /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840D26CD246FF6480000361E /* CharacterDetailViewController.swift */; };
 		840D26D3246FFAD70000361E /* PrefetchingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840D26D2246FFAD70000361E /* PrefetchingViewModel.swift */; };
+		840D26D5247007200000361E /* CharacterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840D26D4247007200000361E /* CharacterDetailViewModel.swift */; };
+		840D26D7247007E00000361E /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840D26D6247007E00000361E /* DateFormatter.swift */; };
 		847472BE246F964F0090E7B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847472BD246F964F0090E7B9 /* AppDelegate.swift */; };
 		847472C0246F964F0090E7B9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847472BF246F964F0090E7B9 /* SceneDelegate.swift */; };
 		847472C5246F964F0090E7B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847472C3246F964F0090E7B9 /* Main.storyboard */; };
@@ -28,6 +30,8 @@
 		840D26CB246FF0FC0000361E /* MarvelRegular-Dj83.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MarvelRegular-Dj83.ttf"; sourceTree = "<group>"; };
 		840D26CD246FF6480000361E /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
 		840D26D2246FFAD70000361E /* PrefetchingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefetchingViewModel.swift; sourceTree = "<group>"; };
+		840D26D4247007200000361E /* CharacterDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewModel.swift; sourceTree = "<group>"; };
+		840D26D6247007E00000361E /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		847472BA246F964F0090E7B9 /* marvel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = marvel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		847472BD246F964F0090E7B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		847472BF246F964F0090E7B9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +81,7 @@
 			children = (
 				847472DB246FA44F0090E7B9 /* CharactersViewModel.swift */,
 				840D26D2246FFAD70000361E /* PrefetchingViewModel.swift */,
+				840D26D4247007200000361E /* CharacterDetailViewModel.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -103,6 +108,7 @@
 				847472BD246F964F0090E7B9 /* AppDelegate.swift */,
 				847472BF246F964F0090E7B9 /* SceneDelegate.swift */,
 				847472E5246FD04D0090E7B9 /* Collection.swift */,
+				840D26D6247007E00000361E /* DateFormatter.swift */,
 				840D26D1246FF6860000361E /* ViewModel */,
 				840D26D0246FF6810000361E /* View */,
 				840D26CF246FF6750000361E /* ViewController */,
@@ -203,12 +209,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				840D26D7247007E00000361E /* DateFormatter.swift in Sources */,
 				847472DC246FA44F0090E7B9 /* CharactersViewModel.swift in Sources */,
 				847472D6246F9ACB0090E7B9 /* CharacterCollectionViewCell.swift in Sources */,
 				847472BE246F964F0090E7B9 /* AppDelegate.swift in Sources */,
 				847472C0246F964F0090E7B9 /* SceneDelegate.swift in Sources */,
 				840D26D3246FFAD70000361E /* PrefetchingViewModel.swift in Sources */,
 				847472DA246F9F270090E7B9 /* CharactersViewController.swift in Sources */,
+				840D26D5247007200000361E /* CharacterDetailViewModel.swift in Sources */,
 				847472E2246FB2370090E7B9 /* GetResultsResponse.swift in Sources */,
 				847472E0246FA9F80090E7B9 /* MarvelClient.swift in Sources */,
 				840D26CE246FF6480000361E /* CharacterDetailViewController.swift in Sources */,

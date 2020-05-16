@@ -11,8 +11,6 @@ import Foundation
 protocol PrefetchingViewModel {
     associatedtype Item
     
-    init(delegate: PrefetchingViewModelDelegate, pageSize: Int)
-    
     var currentItemCount: Int { get }
     var totalFetchableItemCount: Int { get }
     var items: [Item] { get }

@@ -1,5 +1,5 @@
 //
-//  CharactersViewModel.swift
+//  CharacterDetailViewModel.swift
 //  marvel
 //
 //  Created by Sarp on 16.05.2020.
@@ -8,8 +8,8 @@
 
 import Foundation
 
-class CharactersViewModel: PrefetchingViewModel {
-    typealias Item = MarvelCharacter
+class CharacterDetailViewModel: PrefetchingViewModel {
+    typealias Item = Comic
     
     // Private API
     private weak var delegate: PrefetchingViewModelDelegate?
@@ -26,22 +26,31 @@ class CharactersViewModel: PrefetchingViewModel {
         return (startIndex..<endIndex).map { IndexPath(row: $0, section: 0) }
     }
     
-    private(set) var items: [MarvelCharacter] = []
+    private(set) var items: [Comic] = []
+    
+    private let character: MarvelCharacter
 
-    init(delegate: PrefetchingViewModelDelegate, pageSize: Int) {
+    init(delegate: PrefetchingViewModelDelegate, pageSize: Int, character: MarvelCharacter) {
         self.delegate = delegate
         self.pageSize = pageSize
+        self.character = character
     }
     
     private(set) var totalFetchableItemCount: Int = 0
 
+    private lazy var newerThanDate: Date = {
+        let formatter = DateFormatter.posix
+        formatter.dateFormat = "yyyy/MM/dd HH:mm"
+        return formatter.date(from: "2005/01/01 00:00")!
+    }()
+    
     func fetchItems() {
         guard !isCurrentlyFetching else { return }
         isCurrentlyFetching = true
         
         let limit = currentPage * pageSize
         let offset = (currentPage - 1) * pageSize
-        let completion: (Result<GetResultsResponse<MarvelCharacter>, Error>) -> Void = { [weak self] result in
+        let completion: (Result<GetResultsResponse<Comic>, Error>) -> Void = { [weak self] result in
             guard let strSelf = self else { return }
             strSelf.isCurrentlyFetching = false
             switch result {
@@ -58,7 +67,10 @@ class CharactersViewModel: PrefetchingViewModel {
             }
         }
         
-        MarvelClient.shared.requestCharacters(limit: limit, offset: offset, completion: completion)
+        MarvelClient.shared.requestComics(for: character,
+                                          newerThan: newerThanDate,
+                                          limit: limit,
+                                          offset: offset,
+                                          completion: completion)
     }
-    
 }
