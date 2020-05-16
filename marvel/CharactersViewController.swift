@@ -16,6 +16,12 @@ class CharactersViewController: UICollectionViewController {
         super.viewDidLoad()
         viewModel = CharactersViewModel(delegate: self, pageSize: 30)
         viewModel.fetchItems()
+        customizeBackButton()
+    }
+    
+    private func customizeBackButton() {
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem?.tintColor = .gray
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

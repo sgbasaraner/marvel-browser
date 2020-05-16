@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CharacterDetailViewController: UIViewController {
     
@@ -24,6 +25,10 @@ class CharacterDetailViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.prefetchDataSource = self
+        nameLabel?.text = character.name
+        if let url = URL(string: character.thumbnail.urlString) {
+            imageView?.kf.setImage(with: url)
+        }
         viewModel = CharacterDetailViewModel(delegate: self, pageSize: 20, character: character)
         viewModel.fetchItems()
     }
@@ -62,9 +67,12 @@ extension CharacterDetailViewController: UITableViewDelegate, UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "comicCell") else { return UITableViewCell() }
-        cell.textLabel?.text = viewModel.item(at: indexPath.row)?.title
-        cell.textLabel?.textColor = .black
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ComicTableViewCell.reuseId) as? ComicTableViewCell else { return UITableViewCell() }
+        cell.configure(with: viewModel.item(at: indexPath.row))
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 54
     }
 }

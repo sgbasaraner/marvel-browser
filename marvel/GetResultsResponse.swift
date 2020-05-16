@@ -53,6 +53,10 @@ struct Thumbnail: Codable {
         case path
         case thumbnailExtension = "extension"
     }
+    
+    var urlString: String {
+        return path + "." + thumbnailExtension
+    }
 }
 
 struct URLElement: Codable {

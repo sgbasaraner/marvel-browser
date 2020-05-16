@@ -1,5 +1,5 @@
 //
-//  CharacterCollectionViewCell.swift
+//  ComicTableViewCell.swift
 //  marvel
 //
 //  Created by Sarp on 16.05.2020.
@@ -7,15 +7,14 @@
 //
 
 import UIKit
-import Kingfisher
 
-class CharacterCollectionViewCell: UICollectionViewCell {
-    
+class ComicTableViewCell: UITableViewCell {
+
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet private weak var imageView: UIImageView!
+    @IBOutlet private weak var thumbnailImageView: UIImageView!
     
-    static let reuseId = "characterCell"
+    static let reuseId = "comicCell"
     
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -31,26 +30,20 @@ class CharacterCollectionViewCell: UICollectionViewCell {
         nameLabel.layer.shadowOffset = CGSize(width: 0.0, height: -0.5)
         nameLabel.numberOfLines = 1
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
-        nameLabel.font = UIFont(name: "Marvel-Regular", size: 20)
-        contentView.bringSubviewToFront(nameLabel)
     }
     
-    private func cleanName(_ name: String) -> String {
-        return name.replacingOccurrences(of: "\\s?\\([\\w\\s]*\\)", with: "", options: .regularExpression)
-    }
-    
-    func configure(with character: MarvelCharacter?) {
-        if let char = character {
+    func configure(with comic: Comic?) {
+        if let comic = comic {
             activityIndicator?.stopAnimating()
             nameLabel?.alpha = 1
-            nameLabel?.text = cleanName(char.name.uppercased())
-            if let url = URL(string: char.thumbnail.urlString) {
-                imageView?.alpha = 1
-                imageView?.kf.setImage(with: url)
+            nameLabel?.text = comic.title
+            if let url = URL(string: comic.thumbnail.urlString) {
+                thumbnailImageView?.alpha = 1
+                thumbnailImageView?.kf.setImage(with: url)
             }
         } else {
             nameLabel?.alpha = 0
-            imageView?.alpha = 0
+            thumbnailImageView?.alpha = 0
             activityIndicator?.startAnimating()
         }
     }
