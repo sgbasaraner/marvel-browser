@@ -49,12 +49,7 @@ extension CharactersViewController: CharactersViewModelDelegate {
         guard let cell = collectionView
             .dequeueReusableCell(withReuseIdentifier: CharacterCollectionViewCell.reuseId,
                                  for: indexPath) as? CharacterCollectionViewCell else { return UICollectionViewCell() }
-        if let character = viewModel.character(at: indexPath.row) {
-            // TODO: fix img url
-            cell.configure(name: character.name, imageUrl: "")
-        } else {
-            cell.configureLoading()
-        }
+        cell.configure(with: viewModel.character(at: indexPath.row))
         return cell
     }
     

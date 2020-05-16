@@ -11,14 +11,28 @@ import UIKit
 class CharacterCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
     
     static let reuseId = "characterCell"
     
-    func configure(name: String, imageUrl: String) {
-        nameLabel?.text = name
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        configure(with: nil)
     }
     
-    func configureLoading() {
-        nameLabel?.text = "LOADING"
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // TODO: impl
+    }
+    
+    func configure(with character: Character?) {
+        if let char = character {
+            activityIndicator?.stopAnimating()
+            nameLabel?.alpha = 1
+            nameLabel?.text = char.name
+        } else {
+            nameLabel?.alpha = 0
+            activityIndicator?.startAnimating()
+        }
     }
 }
