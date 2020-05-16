@@ -12,6 +12,7 @@ import Kingfisher
 class CharacterDetailViewController: UIViewController {
     
     @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var descriptionLabel: UILabel!
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var tableView: UITableView!
     
@@ -25,6 +26,7 @@ class CharacterDetailViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         nameLabel?.text = character.name
+        descriptionLabel?.text = character.resultDescription
         if let url = URL(string: character.thumbnail.urlString) {
             imageView?.kf.setImage(with: url)
         }
