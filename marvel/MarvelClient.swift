@@ -18,14 +18,31 @@ class MarvelClient {
     
     static let shared = MarvelClient()
     
-    func requestCharacters(limit: Int, offset: Int, completion: @escaping (Result<GetCharactersResponse, Error>) -> Void) {
+    private typealias Params = [String : String]
+    
+    private func generateParams(limit: Int, offset: Int) -> Params {
         let ts = String(Date().timeIntervalSince1970)
         let hashComponents = ts + privateKey + apiKey
         let digest = Insecure.MD5.hash(data: hashComponents.data(using: .utf8) ?? Data())
         let hash = digest.map { String(format: "%02hhx", $0) }.joined()
-        
-        let urlString = baseUrl + "characters?" + "limit=\(limit)&offset=\(offset)&apikey=\(apiKey)&ts=\(ts)&hash=\(hash)"
-        let urlResult = Result.init { URL(string: urlString)! }
+        return [
+            "hash" : hash,
+            "ts" : ts,
+            "apikey" : apiKey,
+            "limit" : String(limit),
+            "offset" : String(offset)
+        ]
+    }
+    
+    private func generateUrl(params: Params, urlString: String) -> URL? {
+        let queryItems = params.map { (k, v) in URLQueryItem(name: k, value: v) }
+        var urlComps = URLComponents(string: urlString)
+        urlComps?.queryItems = queryItems
+        return urlComps?.url
+    }
+    
+    func requestCharacters(limit: Int, offset: Int, completion: @escaping (Result<GetCharactersResponse, Error>) -> Void) {
+        let urlResult = Result.init { generateUrl(params: generateParams(limit: limit, offset: offset), urlString: baseUrl + "characters")! }
         // TODO: add better error handling
         switch urlResult {
         case .success(let url):
