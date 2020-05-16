@@ -17,6 +17,30 @@ class CharactersViewController: UICollectionViewController {
         viewModel = CharactersViewModel(delegate: self, pageSize: 30)
         viewModel.fetchItems()
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        viewModel.totalFetchableItemCount
+    }
+
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView
+            .dequeueReusableCell(withReuseIdentifier: CharacterCollectionViewCell.reuseId,
+                                 for: indexPath) as? CharacterCollectionViewCell else { return UICollectionViewCell() }
+        cell.configure(with: viewModel.item(at: indexPath.row))
+        return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let character = viewModel.item(at: indexPath.row) else { return }
+        goToDetails(character: character)
+    }
+    
+    private func goToDetails(character: MarvelCharacter) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        guard let vc = sb.instantiateViewController(withIdentifier: CharacterDetailViewController.storyboardId) as? CharacterDetailViewController else { return }
+        vc.character = character
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 extension CharactersViewController: PrefetchingViewModelDelegate {
@@ -31,18 +55,6 @@ extension CharactersViewController: PrefetchingViewModelDelegate {
                 self.collectionView.reloadItems(at: indexPathsToReload)
             }
         }
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        viewModel.totalFetchableItemCount
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView
-            .dequeueReusableCell(withReuseIdentifier: CharacterCollectionViewCell.reuseId,
-                                 for: indexPath) as? CharacterCollectionViewCell else { return UICollectionViewCell() }
-        cell.configure(with: viewModel.item(at: indexPath.row))
-        return cell
     }
     
     func fetchFailed(reason: String) {

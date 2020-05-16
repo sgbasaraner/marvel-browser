@@ -21,6 +21,9 @@ class CharacterDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.prefetchDataSource = self
         viewModel = CharacterDetailViewModel(delegate: self, pageSize: 20, character: character)
         viewModel.fetchItems()
     }
@@ -59,7 +62,9 @@ extension CharacterDetailViewController: UITableViewDelegate, UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell() // TODO: initialize correct cell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "comicCell") else { return UITableViewCell() }
         cell.textLabel?.text = viewModel.item(at: indexPath.row)?.title
+        cell.textLabel?.textColor = .black
+        return cell
     }
 }
