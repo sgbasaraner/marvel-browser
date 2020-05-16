@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -75,6 +76,69 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NnL-UL-4Lq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="135" y="134"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Czv-Ok-PtQ">
+            <objects>
+                <viewController storyboardIdentifier="detailVC" id="8X6-kK-Xhk" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BZl-dK-uzK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ARCHANGEL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JP2-7a-wSp">
+                                <rect key="frame" x="12" y="119" width="240.5" height="40"/>
+                                <fontDescription key="fontDescription" name="Marvel-Regular" family="Marvel" pointSize="40"/>
+                                <color key="textColor" red="0.7060188651" green="0.70526021719999998" blue="0.75687527659999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VXc-Vq-IoS">
+                                <rect key="frame" x="260.5" y="56" width="165.5" height="165.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="VXc-Vq-IoS" secondAttribute="height" multiplier="1:1" id="mPk-od-x9b"/>
+                                </constraints>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5w0-Zc-M1V">
+                                <rect key="frame" x="0.0" y="278.5" width="414" height="583.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="mwg-SA-8uK">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mwg-SA-8uK" id="jAg-WX-bBK">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LATEST COMICS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zEH-Ft-7Z4">
+                                <rect key="frame" x="134.5" y="233.5" width="145" height="33"/>
+                                <fontDescription key="fontDescription" name="Marvel-Regular" family="Marvel" pointSize="33"/>
+                                <color key="textColor" red="0.7060188651" green="0.70526021719999998" blue="0.75687527659999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="JP2-7a-wSp" firstAttribute="centerY" secondItem="VXc-Vq-IoS" secondAttribute="centerY" id="6c5-1I-99x"/>
+                            <constraint firstItem="5w0-Zc-M1V" firstAttribute="top" secondItem="zEH-Ft-7Z4" secondAttribute="bottom" constant="12" id="Bql-YA-hiA"/>
+                            <constraint firstItem="zEH-Ft-7Z4" firstAttribute="top" secondItem="VXc-Vq-IoS" secondAttribute="bottom" constant="12" id="FZV-qu-luM"/>
+                            <constraint firstItem="VXc-Vq-IoS" firstAttribute="leading" secondItem="JP2-7a-wSp" secondAttribute="trailing" constant="8" id="OrH-i5-Z4G"/>
+                            <constraint firstItem="VXc-Vq-IoS" firstAttribute="top" secondItem="h5T-Tu-6BU" secondAttribute="top" constant="12" id="XKR-aF-oDu"/>
+                            <constraint firstItem="zEH-Ft-7Z4" firstAttribute="centerX" secondItem="BZl-dK-uzK" secondAttribute="centerX" id="hYX-8D-02I"/>
+                            <constraint firstItem="VXc-Vq-IoS" firstAttribute="width" secondItem="BZl-dK-uzK" secondAttribute="width" multiplier="0.4" id="jNp-Mo-cRo"/>
+                            <constraint firstItem="JP2-7a-wSp" firstAttribute="leading" secondItem="h5T-Tu-6BU" secondAttribute="leading" constant="12" id="jp9-Mf-u4v"/>
+                            <constraint firstItem="VXc-Vq-IoS" firstAttribute="trailing" secondItem="h5T-Tu-6BU" secondAttribute="trailing" constant="12" id="nqC-uH-6gU"/>
+                            <constraint firstItem="h5T-Tu-6BU" firstAttribute="trailing" secondItem="5w0-Zc-M1V" secondAttribute="trailing" id="osl-k9-lJB"/>
+                            <constraint firstItem="5w0-Zc-M1V" firstAttribute="leading" secondItem="h5T-Tu-6BU" secondAttribute="leading" id="tWQ-jh-zr4"/>
+                            <constraint firstItem="h5T-Tu-6BU" firstAttribute="bottom" secondItem="5w0-Zc-M1V" secondAttribute="bottom" id="xSU-xp-Iuw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="h5T-Tu-6BU"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wc4-xn-W0o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1041" y="139"/>
         </scene>
     </scenes>
 </document>

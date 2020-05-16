@@ -13,6 +13,7 @@ struct GetCharactersResponse: Codable {
 }
 
 struct Character: Codable {
+    let id: Int
     let name, resultDescription: String
     let thumbnail: Thumbnail
     let resourceURI: String
@@ -21,7 +22,7 @@ struct Character: Codable {
 
     enum CodingKeys: String, CodingKey {
         case resultDescription = "description"
-        case name, thumbnail, resourceURI, comics, urls
+        case name, thumbnail, resourceURI, comics, urls, id
     }
 }
 
@@ -49,7 +50,6 @@ struct Thumbnail: Codable {
     }
 }
 
-// MARK: - URLElement
 struct URLElement: Codable {
     let type: String
     let url: String
